@@ -13,7 +13,7 @@ public class PemilihanSwitch24 {
         angka1 = sc.nextDouble();
         System.out.println("Masukkan angka 2: ");
         angka2 = sc.nextDouble();
-        System.out.print("Masukkan operator (+ - * :)");
+        System.out.print("Masukkan operator: ");
         operator = sc.next().charAt(0);
 
         switch (operator) {
@@ -27,10 +27,16 @@ public class PemilihanSwitch24 {
                 hasil = angka1 * angka2;
                 break;
             case '/':
-                hasil = angka1 / angka2;
+                if (angka2 != 0) {
+                    hasil = angka1 / angka2;
+                } else {
+                    System.out.println("Error: Pembagi tidak boleh nol.");
+                }
                 break;
+        default:
+            System.out.println("Error: Operator yang dipilih tidak sesuai. Silahkan gunakan +, -, *, atau :,");
         }
 
-        System.out.println(angka1 + " " + operator + " " + angka2 + " = " + hasil);
+            System.out.println(angka1 + operator + angka2 + " = " + hasil);
     }
 }
